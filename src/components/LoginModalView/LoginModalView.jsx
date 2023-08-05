@@ -1,14 +1,16 @@
 import { Button, Modal, Space, Stack } from "@mantine/core";
 import { client_Id } from "../../utils/util";
 export default function LoginModalView() {
+   const callback = "https://nconsole.onrender.com";
+   const callbackDev = "http://localhost:3000";
    const handleProdOauth = () => {
       let instance = "https://login.salesforce.com";
-      let url = `${instance}/services/oauth2/authorize?client_id=${client_Id}&redirect_uri=http://localhost:3000/callback&response_type=token`;
+      let url = `${instance}/services/oauth2/authorize?client_id=${client_Id}&redirect_uri=${callback}/callback&response_type=token`;
       window.open(url, "_self");
    };
    const handleTestOauth = () => {
       let instance = "https://test.salesforce.com";
-      let url = `${instance}/services/oauth2/authorize?client_id=${client_Id}&redirect_uri=http://localhost:3000/callback&response_type=token`;
+      let url = `${instance}/services/oauth2/authorize?client_id=${client_Id}&redirect_uri=${callback}/callback&response_type=token`;
       window.open(url, "_self");
    };
    return (
